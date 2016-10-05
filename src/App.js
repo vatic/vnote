@@ -5,9 +5,11 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <div className="row">
-          <div className="filter-area col-md-4"></div>
-          <div className="controls col-md-8"></div>
+        <div className="row controls">
+          <div className="controls-left col-md-4">
+            <span className="glyphicon glyphicon-tags"></span>
+          </div>
+          <div className="controls-right col-md-8"></div>
         </div>
         <div className="row">
           <div className="notes-list col-md-4">
@@ -15,7 +17,7 @@ class App extends Component {
               <li className="note-in-list">
                 Интересно, какой размер этого окна. ))
               </li>
-              <li className="note-in-list">
+              <li className="note-in-list active">
                 Надо попробовать сделать аналог.
                 Назовём vnotes.
               </li>
