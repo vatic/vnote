@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className="App container">
+        <div className="row">
+          <div className="filter-area col-md-4"></div>
+          <div className="controls col-md-8"></div>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="row">
+          <div className="notes-list col-md-4">
+            <ul>
+              <li className="note-in-list">
+                Интересно, какой размер этого окна. ))
+              </li>
+              <li className="note-in-list">
+                Надо попробовать сделать аналог.
+                Назовём vnotes.
+              </li>
+              <li className="note-in-list">
+                Getting the most out of Simplenote
+                Thanks for signing up!
+              </li>
+            </ul>
+          </div>
+
+          <div className="current-note col-md-8"></div>
+        </div>
       </div>
     );
   }
