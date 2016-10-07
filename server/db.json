@@ -1,0 +1,56 @@
+{
+  "notebooks": [
+    {
+      "id": 1,
+      "title": "IT"
+    },
+    {
+      "id": 2,
+      "title": "Work"
+    },
+    {
+      "id": 3,
+      "title": "Pet Projects"
+    },
+    {
+      "id": 4,
+      "title": "Politics"
+    },
+    {
+      "id": 5,
+      "title": "House"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "title": "Foo",
+      "content": "Интересно, какой размер этого окна. ))",
+      "notebookId": 1
+    },
+    {
+      "id": 2,
+      "title": "VNote",
+      "content": "Надо попробовать сделать аналог.",
+      "notebookId": 3
+    },
+    {
+      "id": 3,
+      "title": "Message",
+      "content": "Thanks for signing up!",
+      "notebookId": 2
+    },
+    {
+      "title": "Foo",
+      "content": "Перезапуск Webstorm помог !!!",
+      "notebookId": 1,
+      "id": 4
+    },
+    {
+      "title": "Bar",
+      "content": "Connect to json-server !!!",
+      "notebookId": 1,
+      "id": 5
+    }
+  ]
+}
