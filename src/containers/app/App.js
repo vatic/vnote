@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import './App.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchTopReposIfNeeded(page));
+    //dispatch(fetchTopReposIfNeeded(page));
   }
   render() {
     return (
@@ -20,28 +18,31 @@ class App extends Component {
           </div>
           <div className="controls-right col-md-8"></div>
         </div>
-        <div className="row">
-          <div className="notes-list col-md-4">
-            <ul>
-              <li className="note-in-list">
-                Интересно, какой размер этого окна. ))
-              </li>
-              <li className="note-in-list active">
-                Надо попробовать сделать аналог.
-                Назовём vnotes.
-              </li>
-              <li className="note-in-list">
-                Getting the most out of Simplenote
-                Thanks for signing up!
-              </li>
-            </ul>
-          </div>
-
-          <div className="current-note col-md-8"></div>
-        </div>
+        {this.props.children}
       </div>
     );
   }
 }
 
-export default App;
+
+App.propTypes = {
+  children: PropTypes.node.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
+};
+
+App.contextTypes = {
+  router: PropTypes.object.isRequired,
+  store: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => {
+  const { notes } = state;
+  return {
+    notes: notes ? notes.list : null,
+  };
+};
+
+export default connect(
+  mapStateToProps
+)(App);

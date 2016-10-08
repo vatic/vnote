@@ -1,12 +1,33 @@
-import { callApi } from '../utils/apiUtils';
+import {
+    NOTES_REQUEST,
+    NOTES_SUCCESS,
+    NOTES_FAILURE } from '../actions/notes';
 
-export const NOTES_REQUEST = 'REPOS_REQUEST';
-export const NOTES_SUCCESS = 'REPOS_SUCCESS';
-export const NOTES_FAILURE = 'REPOS_FAILURE';
 
-export function notesRequest(page) {
-  return {
-    type: NOTES_REQUEST,
-    page,
-  };
+
+export default function notes(state = {
+  isFetching: false,
+  list: [],
+  error: null,
+}, action) {
+  switch (action.type) {
+    case NOTES_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: true,
+      });
+    case NOTES_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        list: action.list,
+        error: null,
+      });
+    case NOTES_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        error: action.error,
+      });
+    default:
+      return state;
+  }
 }
+
